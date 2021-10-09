@@ -28,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
+    "test-ci": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
@@ -47,6 +48,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/service-worker.js",
+      "!<rootDir>/src/serviceWorkerRegistration.js",
+      "!<rootDir>/src/setupTests.js",
+      "!<rootDir>/src/reportWebVitals.js",
+      "!<rootDir>/src/theme.js",
+      "!<rootDir>/src/index.js"
     ]
   },
   "devDependencies": {

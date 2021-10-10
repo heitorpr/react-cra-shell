@@ -12,7 +12,7 @@ const PAGES = {
 function App() {
   return (
     <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
+      <Box py={4} height="100%" width="100%">
         <Router>
           <Switch>
             <Route exact path={PAGES.Home}>

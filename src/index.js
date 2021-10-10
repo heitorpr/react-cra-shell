@@ -6,6 +6,7 @@ import App from 'app';
 import theme from 'theme';
 import * as serviceWorkerRegistration from 'serviceWorkerRegistration';
 import reportWebVitals from 'reportWebVitals';
+import 'index.css';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

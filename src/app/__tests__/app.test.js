@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from '..';
 
-test('renders app navigation', () => {
+it('renders app navigation', () => {
   render(<App />);
 
   // Is On Home
@@ -11,8 +11,8 @@ test('renders app navigation', () => {
 
   // Move to exfeature
   fireEvent.click(exfeatureButton);
-  expect(screen.getByText(/ExFeature/i)).toBeInTheDocument();
-  const backButton = screen.getByText(/Voltar/i);
+  expect(screen.getByText(/Eu odeio CSS/i)).toBeInTheDocument();
+  const backButton = screen.getByTestId('back-button');
 
   // Move back to home
   fireEvent.click(backButton);

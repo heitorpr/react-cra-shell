@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Home from '..';
 
-test('renders home', () => {
+it('renders home', () => {
   render(
     <MemoryRouter>
       <Home />

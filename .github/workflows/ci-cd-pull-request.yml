@@ -23,6 +23,12 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm run test-ci
+    - uses: slavcodev/coverage-monitor-action@1.2.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        clover_file: "coverage/clover.xml"
+        threshold_alert: 10
+        threshold_warning: 50
     - uses: FirebaseExtended/action-hosting-deploy@v0
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'

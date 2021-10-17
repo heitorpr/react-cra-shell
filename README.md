@@ -1,3 +1,3 @@
-[![Node.js CI](https://github.com/heitorpr/react-cra-shell/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/heitorpr/react-cra-shell/actions/workflows/node.js.yml)
+[![CI and Deploy on PR](https://github.com/heitorpr/react-cra-shell/actions/workflows/ci-cd-pull-request.yml/badge.svg)](https://github.com/heitorpr/react-cra-shell/actions/workflows/ci-cd-pull-request.yml)
 
 My setup for a react CRA project

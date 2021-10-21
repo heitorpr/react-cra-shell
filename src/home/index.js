@@ -9,13 +9,10 @@ function Home() {
 
   useEffect(() => {
     getAwesomeMessage()
-      .notFound((error) => setApiResponse(error))
-      .unauthorized((error) => setApiResponse(error))
-      .fetchError(() => {
-        setApiResponse('Falha de rede');
-      })
+      .notFound((error) => setApiResponse(JSON.parse(error.message).message))
+      .fetchError(() => setApiResponse('Falha de rede'))
       .text((response) => setApiResponse(response))
-      .catch((error) => setApiResponse(error));
+      .catch((error) => setApiResponse(error.status));
   }, []);
 
   return (

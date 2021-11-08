@@ -13,6 +13,12 @@ function Home() {
       .fetchError(() => setApiResponse('Falha de rede'))
       .text((response) => setApiResponse(response))
       .catch((error) => setApiResponse(error.status));
+
+    navigator?.serviceWorker?.addEventListener('message', (event) => {
+      if (event.data.meta === 'workbox-broadcast-update') {
+        setApiResponse('O texto foi atualizado');
+      }
+    });
   }, []);
 
   return (

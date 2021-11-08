@@ -14,6 +14,7 @@ import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 import { CacheFirst } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { BroadcastUpdatePlugin } from 'workbox-broadcast-update'
 
 clientsClaim();
 
@@ -97,15 +98,9 @@ registerRoute(
 );
 
 registerRoute(
-  ({url}) => url.origin === 'https://api.github.com' &&
-    url.pathname.startsWith('/zen'),
+  ({ url }) => url.pathname.startsWith('/zen'),
   new StaleWhileRevalidate({
     cacheName: 'zen-api-response',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new ExpirationPlugin({maxEntries: 1}), // Will cache maximum 1 requests.
-    ]
+    plugins: [new BroadcastUpdatePlugin()]
   })
 );

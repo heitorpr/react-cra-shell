@@ -21,6 +21,17 @@ export default function registerServiceWorker() {
         }
       }
     });
+
+    // wb.addEventListener('message', (event) => {
+    //   if (event.data.meta === 'workbox-broadcast-update') {
+    //     const { updatedURL } = event.data.payload;
+
+    //     if (confirm(`Your api ${updatedURL} has new content!`)) {
+    //       window.location.reload();
+    //     }
+    //   }
+    // });
+
     wb.register();
   }
 }
